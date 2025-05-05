@@ -2459,6 +2459,15 @@ li {
     color: #ffffff !important;
 }
 
+.heading-small {
+    color:#aeaeaf;
+    font-size: 13px;
+}
+.title_inner {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
 /* ---------------------------------------------------------*/
 
 

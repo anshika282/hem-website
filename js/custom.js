@@ -105,6 +105,14 @@ $(function(){
             disableOnInteraction: false,
             pauseOnMouseEnter: true
         },
+        breakpoints: {
+            320: {
+                allowTouchMove: true,
+            },
+            480: {
+                allowTouchMove: true,
+            },
+        }
     });
     
     // senses carousel 
@@ -531,3 +539,20 @@ $(function(){
 $(window).load(function(e) {
 
 }); // end window load
+
+document.addEventListener('DOMContentLoaded', function () {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+            }
+        });
+    }, {
+        threshold: 0.3 // Adjust as needed
+    });
+
+    const section = document.querySelector('.new_launch');
+    if (section) {
+        observer.observe(section);
+    }
+});
