@@ -556,3 +556,70 @@ document.addEventListener('DOMContentLoaded', function () {
         observer.observe(section);
     }
 });
+
+(function () {
+    const localStorageKey = 'whatsappPopupSeen';
+    const chatButtonLink = 'https://www.facebook.com/HemPreciousAgarbatti'; // Link for the button to redirect
+
+    // Check if the user has already seen and closed the popup
+    const hasSeenPopup = localStorage.getItem(localStorageKey) === 'true';
+
+    // Function to fade in the popup
+    function fadeIn(element) {
+        element.style.display = 'block';
+        element.style.opacity = 0;
+        let opacity = 0;
+        const interval = setInterval(() => {
+            if (opacity >= 1) {
+                clearInterval(interval);
+            } else {
+                opacity += 0.1;
+                element.style.opacity = opacity;
+            }
+        }, 50);
+    }
+
+    // Function to fade out the popup
+    function fadeOut(element) {
+        let opacity = 1;
+        const interval = setInterval(() => {
+            if (opacity <= 0) {
+                clearInterval(interval);
+                element.style.display = 'none';
+            } else {
+                opacity -= 0.1;
+                element.style.opacity = opacity;
+            }
+        }, 50);
+    }
+
+    // Initialize the popup functionality
+    function initWhatsAppPopup() {
+        const popup = document.querySelector('.whatsapp-chat-bubble');
+        const closeButton = document.querySelector('.whatsapp-chat-bubble-header .close-box button');
+        const chatButton = document.querySelector('.whatsapp-chat-bubble-footer div button');
+
+        if (!popup || !closeButton || !chatButton) return;
+
+        // Show popup after 10-15 seconds if conditions are met
+        if (!hasSeenPopup) {
+            setTimeout(() => {
+                fadeIn(popup);
+            }, 10000); // 10 seconds
+        }
+
+        // Close button functionality
+        closeButton.addEventListener('click', () => {
+            fadeOut(popup);
+            localStorage.setItem(localStorageKey, 'true');
+        });
+
+        // Button click to redirect
+        chatButton.addEventListener('click', () => {
+            window.location.href = chatButtonLink;
+        });
+    }
+
+    // Run the initialization function
+    document.addEventListener('DOMContentLoaded', initWhatsAppPopup);
+})();

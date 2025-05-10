@@ -2468,6 +2468,134 @@ li {
     flex-direction: column;
     gap: 9px;
 }
+
+.whatsapp-chat-bubble {
+    max-width: 350px;
+    font-family: sans-serif;
+    border-radius: 18px;
+    overflow: hidden;
+    display: none; /* Hidden initially */
+    opacity: 0;   /* Hidden by default */
+    transition: opacity 0.3s ease; /* Smooth transition for opacity */
+    z-index: 100000000;
+    position: fixed;
+    bottom: 66px;
+    right: 8px;
+}
+
+.whatsapp-chat-bubble-header {
+    background: #095F54;
+    display: flex;
+    padding: 15px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.whatsapp-chat-profile {
+    display: flex;
+    gap: 8px;
+}
+
+.whatsapp-chat-profile .profile-details {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    gap: 2px;
+    /* line-height: 1; */
+}
+
+.whatsapp-chat-profile .profile-details p {
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.2 !important;
+    color: #ffffff;
+}
+
+.whatsapp-chat-profile .profile-details span {
+    font-size: 12px;
+    line-height: 1.2 !important;
+}
+
+.whatsapp-chat-profile .profile-image {
+    background-color: white;
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    overflow: hidden;
+}
+
+.whatsapp-chat-profile .profile-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.whatsapp-chat-bubble-header .close-box button {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    padding: 5px 10px;
+    color: white !important;
+    cursor: pointer;
+}
+
+.whatsapp-chat-bubble-body {
+    background: url('../images/chat-bg.jpg');
+    padding: 10px;
+    min-height: 150px;
+}
+
+.whatsapp-chat-bubble-footer {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 0px 12px 0px;
+    gap: 6px;
+}
+
+.whatsapp-chat-bubble-footer p {
+    font-size: 12px;
+    margin: 0;
+    color: black !important;
+}
+
+.whatsapp-chat-bubble-footer div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.whatsapp-chat-bubble-footer div button {
+    background-color: #4CC247 !important;
+    color: white !important;
+    border: none;
+    width: 70%;
+    border-radius: 20px;
+    padding: 10px 0;
+}
+.whatsapp-chat-bubble-message p.from-them{
+    background-color: white;
+    position: relative;
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-size: 14px;
+    display: inline-block;
+    margin: 0;
+}
+.whatsapp-chat-bubble-message p.from-them::before{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 15px solid white;
+    border-right: 15px solid transparent;
+    top: 0;
+    left: 0px;
+}
 /* ---------------------------------------------------------*/
 
 
