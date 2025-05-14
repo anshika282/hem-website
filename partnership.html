@@ -3400,7 +3400,7 @@ padding-top: 50px;}
 
 /* Startup Funding Section */
 .funding-section {
-  background-color: #f5f5f5;
+  background-color: #E6E6E6;
   position: relative;
   overflow: hidden;
 }
@@ -3409,9 +3409,20 @@ padding-top: 50px;}
   height: 100%;
   position: relative;
   overflow: hidden;
-  clip-path: polygon(0 0, 65% 0, 100% 100%, 0 100%);
+ 
 }
 
+.funding-image.left{
+  clip-path: polygon(0 0, 65% 0, 100% 100%, 0 100%);
+}
+.funding-image.right{
+  clip-path: polygon(
+    30% 0%, 
+    100% 0%,    
+    100% 100%,   
+    0% 100% 
+  );
+}
 .funding-image img {
   width: 100%;
   height: 100%;
@@ -3475,8 +3486,8 @@ padding-top: 50px;}
   /* border: 2px solid var(--primary-purple); */
   color: purple;
   font-size: 28px;
-  border: 1px solid purple;
-  box-shadow: 0 11px 0px 0px rgba(0, 0, 0, 0.5);
+  border: 2px solid #9869C0;
+  box-shadow: 0 11px 0px 0px #C6B3DD;
 }
 
 .icon-text {
@@ -3489,380 +3500,308 @@ padding-top: 50px;}
 .funding-cta {
   margin-top: auto;
   position:absolute;
-  bottom: 41px;
-  left: 28%;
+  bottom: 100px;
+  transform: scale(1.3);
+}
+
+.funding-cta.cta-left{
+    left: 38%;
+}
+.funding-cta.cta-right{
+  right: 38%;
+}
+
+.funding-cta.cta-left::after{
+  content:"";
+  position: absolute;
+  height:100%;
+  width:100%;
+  transform:skew(20deg);
+  background:#F7931E;
+  border:2.5px solid #ffffff;
+  left: 0;
+  z-index: 1;
+}
+
+.funding-cta.cta-right::after{
+  content:"";
+  position: absolute;
+  height:100%;
+  width:100%;
+  transform:skew(-20deg);
+  background:#F7931E;
+  border:2.5px solid #ffffff;
+  left: 0;
+  z-index: 1;
 }
 
 .cta-button {
   display: inline-flex;
   align-items: center;
-  background-color: orange;
   color: white;
   text-decoration: none;
-  padding: 12px 25px;
-  border-radius: 30px;
+  padding: 17px 25px;
   font-weight: 600;
   font-size: 1.1rem;
   position: relative;
-  overflow: hidden;
   transition: all 0.3s ease;
+  z-index:2;
 }
 
 .cta-button:hover {
-  transform: translateY(-2px);
+  /* transform: translateY(-2px); */
   color: white;
 }
 
+
 .cta-icon-container {
-  width: 30px;
-  height: 30px;
-  background-color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--bright-orange);
-  margin-left: 15px;
-  font-size: 12px;
+    width: 40px;
+    height: 40px;
+    background-color: #F7931E;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    margin-left: 15px;
+    font-size: 12px;
+    position: absolute;
+    border: 2.5px solid #ffffff;
+}
+
+.cta-icon-container.left{
+      left: -38px;
+    top: 8px;
 }
 
 .cta-icon-container.right {
   margin-left: 15px;
+  top: 8px;
+    right: -23px;
 }
 
 .cta-icon {
   font-size: 14px;
 }
+          .purple-shape{
+                height: 70px;
+                width: 300px;
+                display: flex;
+                position: absolute;
+                z-index: 99;
+                top: 81px;
+                flex-direction: row;
+                gap: 15px;
+            }
+              .purple-shape .long-pgm{
+                background-color: #6514a7;
+                height: 100%;
+                width: 100%;
+              }
+              .purple-shape .short-pgm{
+                background-color: #6514a7;
+                height: 100%;
+                width: 50px;
+              }
+              .purple-shape-rt {
+                right: 0;
+              }
+              .purple-shape-lt{
+                left: 0;
+                flex-direction: row-reverse;
+              }
+              .purple-shape-rt .long-pgm{
+                transform: skew(-30deg);
+              }
+              .purple-shape-rt .short-pgm{
+                transform: skew(-30deg);
+              }
+              .purple-shape-lt .long-pgm{
+                transform: skew(30deg);
+              }
+              .purple-shape-lt .short-pgm{
+                transform: skew(30deg);
+              }
+              .short-pgm-second{
+                opacity: 0.7;
+              }
+              .short-pg-third{
+                opacity: 0.5;
+              }
 
-/* Invest Section */
-.invest-section {
-  background-color: #f5f5f5;
-  position: relative;
-  overflow: hidden;
+
+
+ .custom-questions-section{
+        min-height: 400px;
+        background: linear-gradient(to top, #afe5f4, #f7fcfe);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .custom-questions-section .custom-text-holder .heading{
+        font-weight: 600;
+        color: black;
+      }
+      .custom-questions-section .custom-text-holder .description{
+        color: #000;
+        margin-top: 15px;
+      }
+.partners ,.custom-questions-section ,.business-options-section{
+  font-family: 'Poppins';
 }
-
-.invest-image {
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-}
-
-.invest-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  min-height: 400px;
-}
-
-.invest-image::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, rgba(83, 22, 156, 0.6), rgba(114, 86, 219, 0.4));
-  z-index: 1;
-}
-
-.invest-content {
-  background-color: #f5f5f5;
-  padding: 60px 40px;
-  color: #333;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-
-.invest-title {
-  font-size: 2.8rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: #000;
-}
-
-.invest-description {
-  font-size: 1.2rem;
-  margin-bottom: 40px;
-  line-height: 1.5;
-}
-
-.invest-icons {
-  margin-bottom: 40px;
-}
-
-.invest-icon-item {
+section.book-party-form-section {padding: 50px 0;}  
+.book-party-form form {flex-direction: column;}
+section.book-party-form-section {padding: 50px 0;}  
+.book-party-form form>* {flex: 0 0 100%;width: 100%;}
+.form-top-box { display: flex;justify-content: space-between;}  
+.form-bottom-box {display: flex;justify-content: space-between;gap: 15px;  } 
+.form-bottom-box > * {flex: 1 1 0;}
+.form-sbt-btn {display: flex;}
+button#enquiryFormSubmitBtn {position: relative;border-radius: 6px;padding: 15px 45px; 
+width: 380px;height:55px !important; transition: all .1s;opacity: 1;background: transparent !important;margin: 10px auto 0;}
+button#enquiryFormSubmitBtn span {font-size: 18px;color: #ffffff;font-weight: 500;font-family: "Poppins";text-align: center;position: relative;z-index: 99;}
+button#enquiryFormSubmitBtn::before {content: "";position: absolute;top: 0;left: 0;background: #330e5b;z-index: 99;width: 100%;border-radius: 6px;height: 100%;}
+button#enquiryFormSubmitBtn::after {content: "";position: absolute;top: 5px;left: 5px;
+bottom: 0;background-color: #f8ea22;z-index: 9;border-radius: 6px;width: 100%;height: 100%;}
+button#enquiryFormSubmitBtn:hover {opacity: 1;border: inherit;box-shadow: inherit;padding:12px 45px; }
+.highlighted-text {
+  font-family: 'Poppins';
+  font-weight: 600;
   text-align: center;
-  margin-bottom: 30px;
-}
-
-.invest-cta {
-  margin-top: auto;
-}
-@media screen and (max-width: 768px) {
-
-.general-faq-header
- {
-    left: 20%;
-    width: 60%;
-}
-.general-faq-section .general-faq-header h1 {
-    font-size: 29px;
-}
-
-.general-faq-section .faq-lists {
-        padding-bottom: 50px;
-    }
-}
-
-@media screen and (max-width: 499px) {
-.general-faq-section .general-faq-header h1 {
-    font-size: 24px;
-}
-}
-
-
-.game-container {
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Title Styling */
-.title-text {
-    font-size: 40px;
-    font-weight: 900;
-    text-align: center;
-    color: #ff6b00;
-    text-transform: uppercase;
-    margin: 40px 0;
-    /* text-shadow: 
-        -3px -3px 0 #fff,
-        3px -3px 0 #fff,
-        -3px 3px 0 #fff,
-        3px 3px 0 #fff,
-        4px 4px 0 #000; */
-        text-shadow: 2px 2px 0 #ffffff;
-    letter-spacing: 2px;
-}
-
-/* Table Styling */
-.price-table {
-    border-radius: 25px;
-    overflow: hidden;
-    margin: 0 auto;
-    max-width: 1000px;
-}
-
-.ticket-table {
-    background-color: #4b22c0;
-    border: 1px solid #ffffff;
-}
-
-.topup-table {
-    background-color: #ffcc00;
-    border: 1px solid #000000;
-}
-
-.header-row, .value-row {
-    margin: 0;
-
-}
-
-.header-cell, .value-cell {
-    padding: 15px 5px;
-    text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    font-weight: bold;
-}
-
-/* .ticket-table .header-cell {
-    color: white;
-    font-size: 1.2rem;
-    border: 1px solid #ffffff;
-} */
-.ticket-table .header-cell {
-    color: white;
-    font-size: 24px;
-    border: 1px solid #ffffff;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    line-height: 24px;
-    padding:15px;
-}
-
-.ticket-table .value-cell {
-    color: #ffcc00;
-    font-size: 24px;
-    border: 1px solid #ffffff;
-}
-
-.topup-table .header-cell {
-    color: #1a0046;
-    font-size: 24px;
-    border: 1px solid #000000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    line-height: 24px;
-    padding: 15px 8px;
-}
-
-.topup-table .value-cell {
-    color: #4b22c0;
-    font-size: 24px;
-    border: 1px solid #000000;
-}
-
-/* 3D Cubes */
-.cube {
+  font-size:26px;
+  line-height: 1.3;
     position: absolute;
-    width: 80px;
-    height: 80px;
-    transform: rotate(45deg);
-    z-index: 0;
+    top: 50%;
+    bottom: 50%;
+    height: 100%;
+    width: 100%;
+    right: 24%;
+}
+@media screen and (max-width:600px){
+  section.book-party-form-section {padding: 30px 0;}
+  .form-top-box {flex-direction: column;gap: 15px;}
+  .form-bottom-box {flex-direction: column;}
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .book-party-form form>* {
+      width: 100%;
+  } 
+  .form-top-box {
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+  }
 }
 
-.blue-cube {
-    background: linear-gradient(135deg, #4fc3ff 0%, #2a7db5 100%);
+@media only screen and (max-width:499px) {
+  .business-option{
+    margin: 0px 52px;
+    min-height: 83px;
+    padding-right: 70px;
+  }
+  .business-option span:first-of-type {
+    font-size: 18px;
+  }
+  .funding-title {
+    font-size: 44px;
+  }
+  .funding-description{
+    font-size: 20px;
+    margin-bottom: 40px;
+    line-height: 1.5;
+  }
+  .funding-content
+  {
+    padding: 30px 0;
+  }
+  .purple-shape{
+    height: 47px;
+    width: 180px;
+    bottom: 441px;
+    flex-direction: row;
+    gap: 11px;
+    top: unset;
+}
+.funding-image.left {
+    width: 70%;
+    height:90%;
+}
+.funding-image.right{
+  width:100%;
+  height:90%;
+}
+.funding-cta
+ {
+    bottom: 149px;
+    transform: none;
+  }
+
+  .funding-cta.cta-left {
+    left: 37%;
+}
+.funding-icon-item
+ {
+    margin-bottom: 0;
+}
+.funding-image.right
+ {
+    clip-path: polygon(55% 0%, 100% 0%, 100% 100%, 26% 100%);
+}
+.icon-text {
+    font-size: 17px;
+}
+.highlighted-text {
+    font-family: 'Poppins';
+    font-weight: 600;
+    text-align: center;
+    font-size: 26px;
+    line-height: 1.3;
+    position: absolute;
+    top: 30%;
+    bottom: 50%;
+    height: 100%;
+    width: 100%;
+    right: 0%;
+}
 }
 
-.orange-cube {
-    background: linear-gradient(135deg, #ff9d4a 0%, #e06b00 100%);
+@media only screen and (max-width:416px){
+  .funding-cta.cta-left
+  {
+    left: 28%;
+  }
+  .purple-shape {
+    height: 38px;
+    width: 140px;
+    bottom: 446px;
 }
-
-.cube-1 {
-    top: 80px;
-    left: 80px;
+.cta-button{
+  font-size:18px;
 }
-
-.cube-2 {
-    top: 60px;
-    right: 100px;
-    width: 60px;
-    height: 60px;
-}
-
-.cube-3 {
-    bottom: 200px;
-    right: 80px;
-}
-
-.cube-4 {
-    bottom: 260px;
-    left: 100px;
-    width: 60px;
-    height: 60px;
-
-}
-
-.cube-5 {
-      bottom: 100px;
-    left: 28px;
-}
-
-.cube-6 {
-    bottom: 150px;
-    right: 150px;
-    width: 70px;
-    height: 70px;
-}
-
-/* Responsive adjustments */
-@media (max-width:992px)
-{
- .header-row,.value-row {
-        display: flex;
-        flex-direction: column;
-        width: 50%;
-    }
-    .price-table{
-        display: flex;
-        flex-direction: row;
-    }
-    
-}
-@media (max-width: 768px) {
-    .title-text {
-        font-size: 28px;
-    }
-    
-    .header-cell, .value-cell {
-        padding: 10px 2px;
-        font-size: 0.9rem !important;
-    }
-    
-    .ticket-table .value-cell,
-    .topup-table .value-cell {
-        font-size: 1.2rem !important;
-    }
-    
-    .cube {
-        width: 50px;
-        height: 50px;
-    }
-    .ticket-table .header-cell, .topup-table .header-cell{
-        padding: 10.4px;
-    }
-   
-}
-
-@media (max-width: 576px) {
-    .title-text {
-        font-size: 21px;
-    }
-    
-    .header-cell, .value-cell {
-        padding: 5px 1px;
-        font-size: 0.7rem !important;
-    }
-    
-    .ticket-table .value-cell, .topup-table .value-cell {
-        font-size: 16px !important;
-    }
-    
-    .cube {
-        width: 30px;
-        height: 30px;
-    }
-    .ticket-table .header-cell, .topup-table .header-cell{
-        padding: 4.4px;
-    }
-    .cube-2{
-          top: -26px;
-      right: 48px;
-    }
-
-    .cube-1 {
-    top: 8px;
-    left: 20px;
 }
 
 
+
+.highlighted-text .orange {
+  color: orange;
+  font-weight: 700;
+  text-shadow: 
+    -1px -1px 0 white,
+     1px -1px 0 white,
+    -1px  1px 0 white,
+     1px  1px 0 white;
 }
-@media screen and (max-width: 415px) {
-    .title-text:first-of-type{
-        margin-bottom: 20px;
-    }
-    .ticket-table .pay-cell, .topup-table .pay-cell{
-        padding: 16px;
-    }
+
+.highlighted-text .blue {
+  color: #00AEEF;
+  text-shadow: 
+    -1px -1px 0 white,
+     1px -1px 0 white,
+    -1px  1px 0 white,
+     1px  1px 0 white;
 }
-@media screen and (max-width: 382px) {
-  
-       
-    .ticket-table .pay-cell, .topup-table .pay-cell{
-        padding: 16.5px;
-    }
-    
-}
-.game-section{
-  background: linear-gradient(to bottom, #14003a 0%, #1a0046 100%);
+.birthday-hero-banner{
+  position:relative;
 }
 </style>
     <!-- Google Tag Manager -->
@@ -4071,10 +4010,84 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </header>   
 
     <section class="birthday-hero-banner">
+        <div class="highlighted-text">
+          <span class="orange">Partnerships:</span><br>
+          <span class="blue">Let's Build the<br>Future of Fun Together</span>
+        </div>
         <img src="https://skyjumpertrampolinepark.com/wp-content/uploads/2024/11/bday-banner.webp" class="desktop-view" alt="Desktop Banner"> 
         <img src="https://skyjumpertrampolinepark.com/wp-content/uploads/2024/12/mobile-banner-bday.webp" class="mobile-view" alt="Mobile Banner">   
     </section>
-       
+    <section class="book-party-form-section partner-with-us-form" id="enquiry">
+      <div class="container">
+        <h3>BECOME A PARTNER</h3>
+        <div class="book-party-form">
+          <form method="post" name="partnerForm" id="partnerForm">
+            <div class="form-top-box">
+            <input
+              type="text"
+              name="Name"
+              id="Name"
+              placeholder="NAME"
+              required=""
+              pattern="[A-Za-z ]+"
+            />
+            <input
+              type="tel"
+              name="Phone Number"
+              id="Phone Number"
+              placeholder="PHONE"
+              required=""
+              minlength="10"
+              maxlength="10"
+            />
+            <input
+              type="email"
+              name="Email"
+              id="Email"
+              placeholder="EMAIL"
+              required=""
+            />
+            <input
+              type="text"
+              name="Company"
+              id="Company"
+              placeholder="COMPANY"
+              required=""
+            />
+              <input
+              type="text"
+              name="Location"
+              id="Location"
+              placeholder="Location"
+              required=""
+            />
+            </div>
+            <div class="form-bottom-box">
+            <select id="Partnership Type" name="Partnership Type">
+                <option value="">SELECT YOUR PARTNERSHIP TYPE</option>
+              	<option value="Pitch your startup">Pitch your startup</option>
+                <option value="Exlore investment">Exlore investment</option>
+                <option value="book your space">book your space</option>
+                <option value="Enquire now">Enquire now</option> 
+                <option value="Talk to us">Talk to us</option> 
+            </select>
+            <input
+              type="text"
+              name="Interest in Partnership"
+              id="Interest in Partnership"
+              placeholder="YOUR INTEREST IN PARTNERSHIP"
+              required=""
+            />
+            </div>
+            <div class="form-sbt-btn">
+                <button type="submit" id="enquiryFormSubmitBtn">
+                  <span>LET'S PARTNER & GROW!</span>
+                </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
     <section class="business-options-section py-5">
   <div class="container">
     <div class="row gy-4 justify-content-center">
@@ -4111,240 +4124,269 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
     </section>
-
     <section class="partners">
-            <section class="funding-section py-5">
-      <div class="container-fluid p-0">
-        <div class="row g-0">
-          <div class="col-lg-5">
-            <div class="funding-image">
-              <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Startup meeting" class="img-fluid">
+      <div class="funding-section py-5">
+        <div class="container-fluid py-lg-5">
+          <div class="row g-0">
+            <div class="col-lg-6 order-2 order-lg-1 px-0">
+                    <div class="purple-shape purple-shape-lt">
+                      <div class="long-pgm">
+                      </div>
+                      <div class="short-pgm short-pgm-second">
+                      </div>
+                      <div class="short-pgm short-pg-third">
+                      </div>
+                    </div>
+                    <div class="funding-image left">
+                      <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Startup meeting" class="img-fluid">
+                    </div>
+                    <div class="funding-cta cta-left">
+                        <a href="#enquiry" class="cta-button">
+                          <span class="cta-content">
+                            Pitch your startup
+                            <span class="cta-icon-container left">
+                              <i class="fas fa-arrow-right cta-icon"></i>
+                            </span>
+                          </span>
+                        </a>
+                    </div>
             </div>
-            <div class="funding-cta">
-                <a href="#" class="cta-button">
-                  Pitch your startup
-                  <span class="cta-icon-container">
-                    <i class="fas fa-arrow-right cta-icon"></i>
-                  </span>
-                </a>
+            <div class="col-lg-6 order-1 order-lg-2">
+              <div class="funding-content">
+                      <h2 class="funding-title">Startup Funding</h2>
+                      <p class="funding-description">Got a bold idea that screams "fun meets future"?<br>Pitch it to us!</p>
+                      <div class="funding-icons">
+                        <div class="row justify-content-center">
+                          <div class="col-6 col-md-4">
+                            <div class="funding-icon-item">
+                              <div class="icon-circle">
+                                <svg class="svg-icon" width="18" height="18" aria-hidden="true" role="img" focusable="false" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M18 11.2h-5.2V6h-1.6v5.2H6v1.6h5.2V18h1.6v-5.2H18z" fill="currentColor"/></svg>
+                              </div>
+                              <p class="icon-text">Recreation, gaming, ed-tech — if it's fun, we're in</p>
+                            </div>
+                          </div>
+                          <div class="col-6 col-md-4">
+                            <div class="funding-icon-item">
+                              <div class="icon-circle">
+                                <i class="fas fa-money-bill-wave"></i>
+                              </div>
+                              <p class="icon-text">Strategic funding + mentorship</p>
+                            </div>
+                          </div>
+                          <div class="col-6 col-md-4">
+                            <div class="funding-icon-item">
+                              <div class="icon-circle">
+                                <i class="fas fa-cogs"></i>
+                              </div>
+                              <p class="icon-text">Co-develop cool stuff inside our parks</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
               </div>
-          </div>
-          <div class="col-lg-7">
-            <div class="funding-content">
-              <h2 class="funding-title">Startup Funding</h2>
-              <p class="funding-description">Got a bold idea that screams "fun meets future"?<br>Pitch it to us!</p>
-              
-              <div class="funding-icons">
-                <div class="row">
-                  <div class="col-md-4">
-                    <div class="funding-icon-item">
-                      <div class="icon-circle">
-                        <svg class="svg-icon" width="18" height="18" aria-hidden="true" role="img" focusable="false" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M18 11.2h-5.2V6h-1.6v5.2H6v1.6h5.2V18h1.6v-5.2H18z" fill="currentColor"/></svg>
-                      </div>
-                      <p class="icon-text">Recreation, gaming, ed-tech — if it's fun, we're in</p>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="funding-icon-item">
-                      <div class="icon-circle">
-                        <i class="fas fa-money-bill-wave"></i>
-                      </div>
-                      <p class="icon-text">Strategic funding + mentorship</p>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="funding-icon-item">
-                      <div class="icon-circle">
-                        <i class="fas fa-cogs"></i>
-                      </div>
-                      <p class="icon-text">Co-develop cool stuff inside our parks</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              
             </div>
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- Invest Section -->
-    <section class="invest-section">
-      <div class="container-fluid p-0">
-        <div class="row g-0">
-          <div class="col-lg-7">
-            <div class="invest-content">
-              <h2 class="invest-title">Invest in SkyJumper</h2>
-              <p class="invest-description">Ride the trampoline wave — now expanding across India!</p>
-              
-              <div class="invest-icons">
-                <div class="row">
-                  <div class="col-md-4">
-                    <div class="invest-icon-item">
-                      <div class="icon-circle">
-                        <i class="fas fa-building"></i>
+       <!-- next part -->
+     <div class="funding-section py-5">
+        <div class="container-fluid py-lg-5">
+                <div class="row g-0">
+                  <div class="col-lg-6 order-1">
+                    <div class="funding-content">
+                      <h2 class="funding-title">Startup Funding</h2>
+                      <p class="funding-description">Got a bold idea that screams "fun meets future"?<br>Pitch it to us!</p>
+                      <div class="funding-icons">
+                        <div class="row justify-content-center">
+                          <div class="col-6 col-md-4">
+                            <div class="funding-icon-item">
+                              <div class="icon-circle">
+                                <svg class="svg-icon" width="18" height="18" aria-hidden="true" role="img" focusable="false" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M18 11.2h-5.2V6h-1.6v5.2H6v1.6h5.2V18h1.6v-5.2H18z" fill="currentColor"/></svg>
+                              </div>
+                              <p class="icon-text">Recreation, gaming, ed-tech — if it's fun, we're in</p>
+                            </div>
+                          </div>
+                          <div class="col-6 col-md-4">
+                            <div class="funding-icon-item">
+                              <div class="icon-circle">
+                                <i class="fas fa-money-bill-wave"></i>
+                              </div>
+                              <p class="icon-text">Strategic funding + mentorship</p>
+                            </div>
+                          </div>
+                          <div class="col-6 col-md-4">
+                            <div class="funding-icon-item">
+                              <div class="icon-circle">
+                                <i class="fas fa-cogs"></i>
+                              </div>
+                              <p class="icon-text">Co-develop cool stuff inside our parks</p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                      <p class="icon-text">Prime retail space</p>
                     </div>
                   </div>
-                  <div class="col-md-4">
-                    <div class="invest-icon-item">
-                      <div class="icon-circle">
-                        <i class="fas fa-layer-group"></i>
+                  <div class="col-lg-6 px-0 order-2">
+                    <div class="purple-shape purple-shape-rt">
+                      <div class="long-pgm">
                       </div>
-                      <p class="icon-text">Scalable company-owned options</p>
+                      <div class="short-pgm short-pgm-second">
+                      </div>
+                      <div class="short-pgm short-pg-third">
+                      </div>
                     </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="invest-icon-item">
-                      <div class="icon-circle">
-                        <i class="fas fa-users"></i>
-                      </div>
-                      <p class="icon-text">Different age-specific formats across metros, Tier 2/3 cities</p>
+                    <div class="funding-image right">
+                      <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Startup meeting" class="img-fluid">
+                    </div>
+                    <div class="funding-cta cta-right">
+                        <a href="#enquiry" class="cta-button">
+                          <span class="cta-content">
+                            Pitch your startup
+                            <span class="cta-icon-container right">
+                              <i class="fas fa-arrow-right cta-icon"></i>
+                            </span>
+                          </span>
+                        </a>
                     </div>
                   </div>
                 </div>
-              </div>
-              
-              <div class="invest-cta">
-                <a href="#" class="cta-button">
-                  Explore investment
-                  <span class="cta-icon-container right">
-                    <i class="fas fa-arrow-right cta-icon"></i>
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-5">
-            <div class="invest-image">
-              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Investment handshake" class="img-fluid">
-            </div>
-          </div>
         </div>
       </div>
-    </section>
-    </section>
-
-    
-    <section class="general-faq-section py-5">
-        <div class="container">
-            <div class="general-faq-header">
-                <h1 class="fw-bold"><i>General FAQ</i></h1>
-            </div>
-            <div class="faq-lists pt-md-3 pt-lg-5">
-                <div class="faq-articles">
-                    <div class="row">
-                        <div class="col-12 col-md-6 left-faq-list">
-                            <article class="faq-accordion">
-                                <input type="checkbox" class="tgg-title" id="tgg-title-1">
-                                <div class="faq-accordion-title">
-                                    <label for="tgg-title-1">
-                                        <h2>How are birthday parties organized at SkyJumper?</h2>
-                                        <span class="arrow-icon icon">
-                                            <i class="fa-solid"></i>
-                                        </span>
-                                    </label>
-                                </div>
-                                <div class="faq-accordion-content">
-                                    <p>SkyJumper assigns a designated party host to your birthday party who will ensure everything runs smoothly. We've got it all covered, from creating the invite video to set up a special birthday party space equipped for a food buffet and cake ceremony.</p>
-                                </div>
-                            </article>
-                            <article class="faq-accordion">
-                                <input type="checkbox" class="tgg-title" id="tgg-title-2">
-                                <div class="faq-accordion-title">
-                                    <label for="tgg-title-2">
-                                        <h2>Is there any time limit on the birthday parties?</h2>
-                                        <span class="arrow-icon icon">
-                                            <i class="fa-solid"></i>
-                                        </span>
-                                    </label>
-                                </div>
-                                <div class="faq-accordion-content">
-                                    <p>You can choose between 2 and 3 hours of total activity time. 45 minutes are set aside for food and cake cutting; the rest is activity time.</p>
-                                </div>
-                            </article>
-                            <article class="faq-accordion">
-                                <input type="checkbox" class="tgg-title" id="tgg-title-3">
-                                <div class="faq-accordion-title">
-                                    <label for="tgg-title-3">
-                                        <h2>How far in advance should I book a birthday party?</h2>
-                                        <span class="arrow-icon icon">
-                                            <i class="fa-solid"></i>
-                                        </span>
-                                    </label>
-                                </div>
-                                <div class="faq-accordion-content">
-                                    <p>We recommend booking your party at least 15 days in advance to ensure availability.</p>
-                                </div>
-                            </article>
-                            <article class="faq-accordion">
-                                <input type="checkbox" class="tgg-title" id="tgg-title-4">
-                                <div class="faq-accordion-title">
-                                    <label for="tgg-title-4">
-                                        <h2>What is your cancellation policy?</h2>
-                                        <span class="arrow-icon icon">
-                                            <i class="fa-solid"></i>
-                                        </span>
-                                    </label>
-                                </div>
-                                <div class="faq-accordion-content">
-                                    <p>Birthday parties can be rescheduled or cancelled up to 7 days before the event date for a full refund. Cancellations made within 7 days of the event are subject to a cancellation fee.
-                                    </p>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="col-12 col-md-6 right-faq-list">
-                            <article class="faq-accordion">
-                                <input type="checkbox" class="tgg-title" id="tgg-title-5">
-                                <div class="faq-accordion-title">
-                                    <label for="tgg-title-5">
-                                    <h2>Where and how do I book a birthday party at SkyJumper?</h2>
-                                        <span class="arrow-icon icon">
-                                            <i class="fa-solid"></i>
-                                        </span>
-                                    </label>
-                                </div>
-                                <div class="faq-accordion-content">
-                                    <p>You can book a birthday party through by filling the form on our website by <a href="#bdayForm">clicking here </a> or by calling us directly on <a href="tel://+91 8882288001">+91 8882288001</a></p>
-                                </div>
-                            </article>
-                            <article class="faq-accordion">
-                                <input type="checkbox" class="tgg-title" id="tgg-title-6">
-                                <div class="faq-accordion-title">
-                                    <label for="tgg-title-6">
-                                        <h2>What’s required to confirm my event?</h2>
-                                        <span class="arrow-icon icon">
-                                            <i class="fa-solid"></i>
-                                        </span>
-                                    </label>
-                                </div>
-                                <div class="faq-accordion-content">
-                                    <p>To confirm your event, a deposit is required to secure at the event. The remaining balance is due on the day of the event.
-                                </p>
-                                </div>
-                            </article>
-                            <article class="faq-accordion">
-                                <input type="checkbox" class="tgg-title" id="tgg-title-7">
-                                <div class="faq-accordion-title">
-                                    <label for="tgg-title-7">
-                                    <h2>What’s the minimum and maximum guest count allowed for events?</h2>
-                                    <span class="arrow-icon icon">
-                                        <i class="fa-solid"></i>
-                                    </span>
-                                    </label>
-                                </div>
-                                <div class="faq-accordion-content">
-                                    <p>We ask for a minimum of 10 guests to book an event and can accommodate upwards of a maximum of 300 guests when you rent out the park exclusively!
-                                    </p>
-                                </div>
-                            </article>
-                        </div>
+      <div class="funding-section py-5">
+        <div class="container-fluid py-lg-5">
+                <div class="row g-0">
+                  <div class="col-lg-6 px-0 order-2 order-lg-1">
+                    <div class="purple-shape purple-shape-lt">
+                      <div class="long-pgm">
+                      </div>
+                      <div class="short-pgm short-pgm-second">
+                      </div>
+                      <div class="short-pgm short-pg-third">
+                      </div>
                     </div>
+                    <div class="funding-image left">
+                      <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Startup meeting" class="img-fluid">
+                    </div>
+                    <div class="funding-cta cta-left">
+                        <a href="#enquiry" class="cta-button">
+                          <span class="cta-content">
+                            Pitch your startup
+                            <span class="cta-icon-container left">
+                              <i class="fas fa-arrow-right cta-icon"></i>
+                            </span>
+                          </span>
+                        </a>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 order-1 order-lg-2">
+                    <div class="funding-content">
+                      <h2 class="funding-title">Startup Funding</h2>
+                      <p class="funding-description">Got a bold idea that screams "fun meets future"?<br>Pitch it to us!</p>
+                        <div class="funding-icons">
+                        <div class="row justify-content-center">
+                          <div class="col-6 col-md-4">
+                            <div class="funding-icon-item">
+                              <div class="icon-circle">
+                                <svg class="svg-icon" width="18" height="18" aria-hidden="true" role="img" focusable="false" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M18 11.2h-5.2V6h-1.6v5.2H6v1.6h5.2V18h1.6v-5.2H18z" fill="currentColor"/></svg>
+                              </div>
+                              <p class="icon-text">Recreation, gaming, ed-tech — if it's fun, we're in</p>
+                            </div>
+                          </div>
+                          <div class="col-6 col-md-4">
+                            <div class="funding-icon-item">
+                              <div class="icon-circle">
+                                <i class="fas fa-money-bill-wave"></i>
+                              </div>
+                              <p class="icon-text">Strategic funding + mentorship</p>
+                            </div>
+                          </div>
+                          <div class="col-6 col-md-4">
+                            <div class="funding-icon-item">
+                              <div class="icon-circle">
+                                <i class="fas fa-cogs"></i>
+                              </div>
+                              <p class="icon-text">Co-develop cool stuff inside our parks</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-            </div>  
+        </div>
+      </div>
+       <!-- next part -->
+     <div class="funding-section py-5">
+        <div class="container-fluid py-lg-5">
+                <div class="row g-0">
+                  <div class="col-lg-6">
+                    <div class="funding-content">
+                      <h2 class="funding-title">Startup Funding</h2>
+                      <p class="funding-description">Got a bold idea that screams "fun meets future"?<br>Pitch it to us!</p>
+                      <div class="funding-icons">
+                        <div class="row justify-content-center">
+                          <div class="col-6 col-md-4">
+                            <div class="funding-icon-item">
+                              <div class="icon-circle">
+                                <svg class="svg-icon" width="18" height="18" aria-hidden="true" role="img" focusable="false" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M18 11.2h-5.2V6h-1.6v5.2H6v1.6h5.2V18h1.6v-5.2H18z" fill="currentColor"/></svg>
+                              </div>
+                              <p class="icon-text">Recreation, gaming, ed-tech — if it's fun, we're in</p>
+                            </div>
+                          </div>
+                          <div class="col-6 col-md-4">
+                            <div class="funding-icon-item">
+                              <div class="icon-circle">
+                                <i class="fas fa-money-bill-wave"></i>
+                              </div>
+                              <p class="icon-text">Strategic funding + mentorship</p>
+                            </div>
+                          </div>
+                          <div class="col-6 col-md-4">
+                            <div class="funding-icon-item">
+                              <div class="icon-circle">
+                                <i class="fas fa-cogs"></i>
+                              </div>
+                              <p class="icon-text">Co-develop cool stuff inside our parks</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 px-0">
+                    <div class="purple-shape purple-shape-rt">
+                      <div class="long-pgm">
+                      </div>
+                      <div class="short-pgm short-pgm-second">
+                      </div>
+                      <div class="short-pgm short-pg-third">
+                      </div>
+                    </div>
+                    <div class="funding-image right">
+                      <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Startup meeting" class="img-fluid">
+                    </div>
+                    <div class="funding-cta cta-right">
+                        <a href="#enquiry" class="cta-button">
+                          <span class="cta-content">
+                            Pitch your startup
+                            <span class="cta-icon-container right">
+                              <i class="fas fa-arrow-right cta-icon"></i>
+                            </span>
+                          </span>
+                        </a>
+                    </div>
+                  </div>
+                </div>
+        </div>
+      </div>
+
+    </section>
+    <section class="custom-questions-section py-5">
+        <div class="container text-center flex">
+            <div class="custom-text-holder">
+              <h1 class="heading"> Got questions or custom ideas?</h1>
+              <h4 class="description">Email us at: enquiry@skyjumpertp.com</h4> <!-- change to p tag later -->
+            </div>
         </div>
     </section>
 
